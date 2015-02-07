@@ -1,13 +1,6 @@
+@charset "utf-8";
 .container {
 	max-width: 960px;
 	background: silver;
 	margin:0 auto;
-}
-
-.header>h1{
-
-}
-
-.footer{
-
 }
