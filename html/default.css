@@ -1,6 +1,27 @@
 @charset "utf-8";
-.container {
+/* html reset */
+header, footer, section, article, nav, aside, main, figure, figcaption {
+	display: block;
+}
+
+/*.container {
 	max-width: 960px;
 	background: silver;
 	margin:0 auto;
-}
+}*/
+
+/* All */
+
+/* Mobile */
+
+/* Tablet & Desktop */
+ @media (min-width:768px){
+ 	body{
+ 		background: #f00;
+ 	}
+ }
+
+
+/* Tablet */
+
+/* Desktop */
