@@ -11,17 +11,28 @@ header, footer, section, article, nav, aside, main, figure, figcaption {
 }*/
 
 /* All */
+body{
+	background: -webkit-linear-gradient(#ccc,#fff); 
+	background: -moz-linear-gradient(#ccc,#fff);
+	background: -ms-linear-gradient(#ccc,#fff);
+	background: -o-linear-gradient(#ccc,#fff);
+	background: linear-gradient(#ccc,#fff);
+}
 
 /* Mobile */
+/* 오래된 모바일 브라우져를 지원하기 위해서 media 쿼리를 사용하지 않는다 (=mobile first css)*/
 
 /* Tablet & Desktop */
  @media (min-width:768px){
- 	body{
- 		background: #f00;
- 	}
+
  }
 
-
 /* Tablet */
+@media (min-width: 768px) and (max-width: 1024px){
+
+}
 
 /* Desktop */
+@media (min-width: 1025px){
+
+}
