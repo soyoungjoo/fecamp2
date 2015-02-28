@@ -223,7 +223,67 @@ main{
 }
 /* Tablet & Desktop */
  @media (min-width:768px){
+ 	.gnb>button{
+ 		display: none;
+ 	}
 
+ 	.search{
+ 		position: absolute;
+ 		top:20px;
+ 		right:10px;
+ 		margin:0;
+ 		width: 200px;
+ 	}
+ 	.gnb{
+ 		margin-bottom: 15px;
+ 	}
+ 	.gnb>ul{
+ 		display: block !important; /* 적용 우선순위를 최상위로 만드는 !important */
+ 		height: 40px;
+ 		border-bottom: 40px solid #fff;
+ 		padding:0 0 0 25px;
+ 		background: -webkit-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+ 		background: -moz-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+ 		background: -ms-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+ 		background: -o-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+ 		background: linear-gradient(to bottom, #555 0%, #333 50%, #000 50%, #222 100%);
+ 		overflow: visible;
+ 	}
+ 	.gnb ul ul{
+ 		display: none;
+ 	}
+ 	.gnb>ul>li{
+ 		float: left;
+ 	}
+ 	.gnb a{
+ 		background: none !important;
+ 	}
+ 	.gnb>ul>li>a{
+ 		line-height: 40px;
+ 		padding: 0 25px;
+ 	}
+ 	.gnb>ul>.active>a{ /* .gnb>ul>li.active>a{ */
+ 		background: #fff !important;
+ 		color: #000;
+ 		font-weight: 700; /* bold = 700 */
+ 		margin:4px 0 0 0;
+		line-height: 36px;
+ 		border-radius:4px 4px 0 0;
+ 	}
+ 	.gnb>ul>.active>ul{
+ 		display: block;
+ 	}
+ 	.gnb ul ul{
+ 		position: absolute;
+ 	}
+ 	.gnb li li{
+ 		border:0;
+ 		display: inline-block;
+ 	}
+ 	.gnb li li>a{
+ 		color:#666;
+ 		line-height: 40px;
+ 	}
  }
 
 /* Tablet */
