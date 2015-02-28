@@ -4,11 +4,20 @@ header, footer, section, article, nav, aside, main, figure, figcaption {
 	display: block;
 }
 
-/*.container {
-	max-width: 960px;
-	background: silver;
-	margin:0 auto;
-}*/
+html, body {
+	min-height: 100%;
+	/* body의 부모인 html의 높이가 100%가 아닐수 있으므로 함께 설정해준다. */
+}
+
+body{
+	margin:0;
+	min-width: 320px;
+}
+
+body, table, button, input, textarea, select{
+	/* 폰트 사이즈가 선언이 되지 않을 선택자들을 따로 더 추가 기재한다. */
+	font-size: 14px;
+}
 
 /* All */
 body{
@@ -19,9 +28,199 @@ body{
 	background: linear-gradient(#ccc,#fff);
 }
 
-/* Mobile */
-/* 오래된 모바일 브라우져를 지원하기 위해서 media 쿼리를 사용하지 않는다 (=mobile first css)*/
+.header>h1{
+	font-size: 28px;
+	text-shadow: 1px 1px 0 #fff;
+}
+/*.search{
 
+	letter-spacing:-4px;
+}*/
+.search>input{
+	vertical-align: top;
+	border-radius: 3px;
+}
+.search>[type="search"]{
+	border: 1px solid #ccc;
+	height: 32px;
+	width: 160px;
+	box-shadow: 0 0 4px #ccc inset; 
+
+} 
+.search>[type="submit"]{
+	width: 50px;
+	height: 32px;
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 4px #aaa; 
+}
+
+main, .lnb, .aside{
+	margin-bottom: 15px;
+}
+main{
+	background:#fff;	
+	box-shadow: 0 0 4px #999;
+	box-shadow: 0 0 4px rgba(0,0,0,0.3);
+	border-radius: 8px;
+	min-height: 300px;
+}
+
+.lnb ul, .aside ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+.lnb{
+	text-shadow:1px 1px #333;
+}
+.lnb h2{
+	background: #666;
+	border-radius: 4px 4px 0 0;
+	font-size: 14px;
+	color: #fff;
+	padding: 0 10px;
+	line-height: 32px;
+	margin: 0;
+}
+
+.lnb li{
+	margin:1px 0;
+}
+.lnb a{
+	display: block;
+	background: #777;
+	padding:0 10px;
+	line-height: 32px;  /* 모바일단말에서 터치할수있는 최소 높이가 32px로 지정되어있음. */
+	text-decoration: none;
+	color:#fff;
+	-webkit-transition:.2s;
+	-moz-transition:.2s;
+	-ms-transition:.2s;
+	-o-transition:.2s;
+	transition:.2s;
+}
+.lnb :last-child>a{  /* .lnb li:last-child>a 와 같은 표기 */
+	border-radius: 0 0 4px 4px;
+}
+.lnb a:hover, .lnb a:focus{  /* hover:마우스, focus:키보드 */
+	background: #555;
+}
+
+.aside{
+	border:1px solid #ddd;
+	border-radius: 4px;
+	padding: 0 10px;
+}
+.aside h2{
+	font-size:14px;
+	margin: 0;
+	border-bottom: 1px solid #ddd;
+	line-height: 32px;
+}
+.aside ul{
+	padding: 10px 0;
+}
+.aside a{
+	display: block;
+	line-height: 32px;
+	text-decoration: none;
+}
+
+.footer{
+	border-top:1px dotted #ccc;
+}
+.footer>p{
+	text-align: center;
+	color:#959595;
+	/* 웹접근성 지침으로 색이 지정이 되어있기에 959595정도가 최대로 여리게 쓰일수 있는 색상이다.*/
+}
+
+/* Mobile */
+/* 오래된 모바일 브라우져를 지원하기 위해서 media 쿼리를 사용하지 않는다. (=mobile first css) */
+.container{
+	margin:0 10px;
+}
+.skip{
+	display: none;
+}
+.gnb>h2{
+	height: 1px;   /* 간혹 면적값이 없으면 인식을 못하기에 height값을 지정해준다. */
+	position: absolute;
+	overflow: hidden;
+	margin: 0;
+}
+.gnb>button{
+	border:0;
+	background:#666;
+	width:40px;
+	height: 36px;
+	padding:36px 0 0 0;  
+	overflow: hidden;
+	border-radius: 3px;
+	position: absolute;
+	cursor: pointer;
+	top:15px;
+	right:10px;
+}
+.gnb>button:before{
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 32px;
+	height: 4px;
+	border-top:12px double #fff;	
+	border-bottom:12px double #fff;
+}
+.gnb>ul{
+	background: #666;
+	border-radius: 4px;
+	overflow: hidden;
+	display: none;
+}
+.gnb ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.gnb a{
+	display: block;
+	background: #666;
+	color:#fff;
+	line-height: 32px;
+	text-decoration: none;
+	padding:0 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gnb>ul>li>a{
+	background: #444;
+ }
+
+.gnb li li{
+	border-top:1px dotted #444;
+}
+.gnb li li:first-child{
+	border:0;
+}
+
+.search{
+	margin: 15px 0;
+	padding: 0 60px 0 0;
+	position: relative;
+}
+.search>[type="search"]{
+	display: block;
+	width: 100%;
+}
+.search>[type="submit"]{
+	width: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 /* Tablet & Desktop */
  @media (min-width:768px){
 

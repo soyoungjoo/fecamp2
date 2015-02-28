@@ -6,20 +6,23 @@
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2,user-scalable=no " > -->	
 	<title>HTML5</title>
 	<link rel="stylesheet" href="default.css">
+	<!--[if lt IE 9]>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![end if]-->
 </head>
 <body>
 	<!-- <p title="참고제목" style="background:yellow;text-decoration:underline;">first class</p> -->
 	<div class="container"> 
-		<a href="#main">메뉴건너뛰기</a> 
+		<a href="#main" class="skip">메뉴건너뛰기</a> 
 		<header class="header">
 			<h1>HTML5</h1>
 			<nav class="gnb">
 				<h2>메인메뉴</h2> <!-- 시각장애인들을 위해 작성하기를 권장-->
+				<button type="button">메뉴 열기</button>
 				<ul>
 					<li>
-						<a href="#">메뉴 1</a>
+						<a href="#">메뉴 1 zzzzz z z zzzzzzzz zzzzzzzzzz zzzzzz zzzzzzz</a>
 						<ul>
 							<li><a href="#">메뉴 1-1</a></li>
 							<li><a href="#">메뉴 1-2</a></li>
@@ -73,6 +76,8 @@
 		<footer class="footer">
 			<p>Copyright &copy;FE.CAMP. All rights reserved.</p>
 		</footer>
-	</div>	
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>	
+	<script src="default.js"></script>	
 </body>
 </html>
