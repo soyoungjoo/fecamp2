@@ -19,6 +19,24 @@ body, table, button, input, textarea, select{
 	font-size: 14px;
 }
 
+img, video{
+	max-width: 100%;
+	height: auto;
+}
+
+.vframe{
+  position:relative;
+  max-width:100%;
+  height:0;
+  padding-top:56.25%;
+}
+.vframe>iframe{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+}
+
 /* All */
 body{
 	background: -webkit-linear-gradient(#ccc,#fff); 
@@ -66,6 +84,10 @@ main{
 	min-height: 300px;
 }
 
+main>article{
+	padding: 15px;
+}
+
 .lnb ul, .aside ul{
 	margin:0;
 	padding:0;
@@ -111,6 +133,7 @@ main{
 	border:1px solid #ddd;
 	border-radius: 4px;
 	padding: 0 10px;
+	background: #fff;
 }
 .aside h2{
 	font-size:14px;
@@ -236,6 +259,7 @@ main{
  	}
  	.gnb{
  		margin-bottom: 15px;
+ 		position: relative;
  	}
  	.gnb>ul{
  		display: block !important; /* 적용 우선순위를 최상위로 만드는 !important */
@@ -272,10 +296,16 @@ main{
  	}
  	.gnb>ul>.active>ul{
  		display: block;
+ 		left:20px;
  	}
  	.gnb ul ul{
  		position: absolute;
  	}
+ 	/*  2015-03-05
+ 		.gnb ul li:nth-child(3)>ul{
+ 			left:100px;    
+ 			메뉴 2, 메뉴 3 아래에 서브메뉴가 바로 위치하도록 하는 방법. nth-child를 이용함.} 
+ 	*/
  	.gnb li li{
  		border:0;
  		display: inline-block;
@@ -284,14 +314,69 @@ main{
  		color:#666;
  		line-height: 40px;
  	}
+
+	.body:after{
+ 		content: "";
+ 		display: block;
+ 		clear: both;
+ 		/* 가상요소선택자인 after나 before는 반드시 content와 함께 사용되어여 한다. 
+ 		   그리고 추가되는 요소는 inline요소 이므로 clear:both; 가 적용되지 않으므로 
+ 		   display속성을 block으로 변경해줘야 된다. 
+ 		   또 여기서 clear속성을 적용한 이유는 main, nav, aside에 float속성을 사용하면서 
+ 		   z축으로 벗어나기떄문에 사용된 float속성을 해제하기 위해서 적용된 것이다.*/
+ 	}
  }
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1024px){
-
+	.body{
+		padding-right: 200px;
+	}
+	main{
+		float: left;
+		width: 100%;
+		margin-right: -180px;
+	}
+	.lnb, .aside{
+		float: right;
+		width: 180px;
+		box-sizing:border-box;
+		position: relative;
+		left: 200px;
+	}
 }
 
 /* Desktop */
 @media (min-width: 1025px){
-
+	.body{
+		padding:0 200px 0 220px;
+	}
+	main{
+		float: left;
+		width: 100%;
+		margin-right: -100%;
+	}
+	.lnb, .aside{
+		position: relative;
+	}
+	.lnb{
+		float: left;
+		width: 200px;
+		right: 220px;
+	}
+	.aside{
+		float: right;
+		width: 158px;
+		left: 200px;
+	}
+	.container{
+		max-width: 1280px;
+		margin: 0 auto;
+		position: relative;
+		padding:0 10px;
+	}
+	.search{
+		top:0;
+		right: 10px;
+	}
 }
