@@ -17,6 +17,12 @@ body{
 body, table, button, input, textarea, select{
 	/* 폰트 사이즈가 선언이 되지 않을 선택자들을 따로 더 추가 기재한다. */
 	font-size: 14px;
+	font-family: sans-serif;
+	/*font-family: NG, sans-serif;
+	 sans-serif : 고딕계열 글꼴, 선언하지 않으면 시스템글꼴로 설정되어 궁서체 등이 사용될 수 있음.
+	모바일에서는 웹폰트가 부담이 될수 있으므로 시스템 폰트가 적용되도록 설정하는 것이 좋다. 
+	그러므로 모바일페이지가 함께 존재한다면 공용으로 적용되는 css에 웹폰트를 적용하는 것 보다
+	모바일 페이지가 제외된 곳이 직접 적용하는 것이 좋다.*/
 }
 
 img, video{
@@ -38,6 +44,18 @@ img, video{
 }
 
 /* All */
+@font-face {
+  font-family: NG; /* 글꼴 이름에 공백이 존재한다면 따옴표를 적어야 한다. */
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);  /* ie 6,7,8 */
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+       /* format을 선언하기를 권장함. */
+}
+
 body{
 	background: -webkit-linear-gradient(#ccc,#fff); 
 	background: -moz-linear-gradient(#ccc,#fff);
@@ -49,6 +67,9 @@ body{
 .header>h1{
 	font-size: 28px;
 	text-shadow: 1px 1px 0 #fff;
+}
+.gnb * {
+	box-sizing:content-box;
 }
 /*.search{
 
@@ -134,6 +155,7 @@ main>article{
 	border-radius: 4px;
 	padding: 0 10px;
 	background: #fff;
+	box-sizing:content-box;
 }
 .aside h2{
 	font-size:14px;
@@ -158,14 +180,35 @@ main>article{
 	color:#959595;
 	/* 웹접근성 지침으로 색이 지정이 되어있기에 959595정도가 최대로 여리게 쓰일수 있는 색상이다.*/
 }
-
 .table-rwd{
 	overflow: auto;
 }
-
+.table{
+	border-collapse: collapse; /* border 사이에 공백을 없애는 방법 */
+	table-layout: fixed;
+}
+.table th, .table td{
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+.table thead th{
+	background: #eee;
+	border-top: 2px solid #bbb; 
+}
+.table td{
+	vertical-align: top;
+	width:14%;
+}
+.sign-up dt{
+	font-weight: bold;
+	font-size: 16px;
+}
+.sign-up input+label{  /* input 뒤에 label만 선택시 다음과 같이 작성한다.*/
+	margin-right: 20px;
+}
 /* Mobile */
 /* 오래된 모바일 브라우져를 지원하기 위해서 media 쿼리를 사용하지 않는다. (=mobile first css) */
-.container{
+.ctnr{
 	margin:0 10px;
 }
 .skip{
@@ -176,6 +219,7 @@ main>article{
 	position: absolute;
 	overflow: hidden;
 	margin: 0;
+	opacity: 0;
 }
 .gnb>button{
 	border:0;
@@ -189,6 +233,7 @@ main>article{
 	cursor: pointer;
 	top:15px;
 	right:10px;
+	box-sizing:border-box;
 }
 .gnb>button:before{
 	content: "";
@@ -199,6 +244,7 @@ main>article{
 	height: 4px;
 	border-top:12px double #fff;	
 	border-bottom:12px double #fff;
+	box-sizing:content-box;
 }
 .gnb>ul{
 	background: #666;
@@ -250,6 +296,9 @@ main>article{
 }
 /* Tablet & Desktop */
  @media (min-width:768px){
+ 	body, table, button, input, textarea, select{
+		font-family: NG, sans-serif;
+	}
  	.gnb>button{
  		display: none;
  	}
@@ -373,7 +422,7 @@ main>article{
 		width: 158px;
 		left: 200px;
 	}
-	.container{
+	.ctnr{
 		max-width: 1280px;
 		margin: 0 auto;
 		position: relative;

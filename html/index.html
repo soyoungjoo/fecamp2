@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width" >
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2,user-scalable=no " > -->	
 	<title>HTML5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="default.css">
 	<!--[if lt IE 9]>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -13,7 +14,7 @@
 </head>
 <body>
 	<!-- <p title="참고제목" style="background:yellow;text-decoration:underline;">first class</p> -->
-	<div class="container"> 
+	<div class="ctnr"> 
 		<a href="#main" class="skip">메뉴건너뛰기</a> 
 		<header class="header">
 			<h1>HTML5</h1>
@@ -75,7 +76,7 @@
 					<div hidden class="vframe">
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/9HhvYZQyxX8" frameborder="0" allowfullscreen></iframe>
 					</div>
-					<div class="table-rwd">
+					<div hidden class="table-rwd">
 				      <table class="table">
 				        <thead>
 				          <tr>
@@ -91,7 +92,7 @@
 				        <tbody>
 				          <tr>
 				            <th scope="row">1</th>
-				            <td>Table cell</td>
+				            <td>Table cell Table cell Table cell Table cell Table cell Table cell Table cell </td>
 				            <td>Table cell</td>
 				            <td>Table cell</td>
 				            <td>Table cell</td>
@@ -119,6 +120,74 @@
 				        </tbody>
 				      </table>
 				    </div>
+				    <!-- 웹폰트 적용 예제 -->
+				    <h1 hidden>나눔고딕 테스트</h1>
+				    <p hidden>동해물과 백두산이 마르고 </p>
+
+				    <!-- 회원가입 form-->
+				    <form class="sign-up">
+				    	<fieldset>				    		
+				    		<legend>회원가입(필수)</legend>
+				    		<div class="form-group">
+				    			<lable for="email">이메일</lable>
+				    			<input type="email" class="form-control" id="email" required placeholder="abc@abc.com">
+				    		</div>
+				    		<div class="form-group">
+				    			<lable for="pw1">비밀번호</lable>
+				    			<input type="password" class="form-control" id="pw1" required placeholder="영문 대소문자와 숫자를 사용하여 6자리 이상 작성">
+				    		</div>
+				    		<div class="form-group">
+				    			<lable for="pw2">비밀번호확인</lable>
+				    			<input type="password" class="form-control" id="pw2" required placeholder="영문 대소문자와 숫자를 사용하여 6자리 이상 작성">
+				    		</div>
+				    	</fieldset>
+				    	<fieldset>
+				    		<legend>추가 입력 사항(옵션)</legend>
+				    		<dl>
+				    			<dt>성별</dt>
+				    			<dd>
+				    				<input type="radio" id="male" name="gender">
+				    				<label for="male">남성</label>
+				    				<input type="radio" id="female" name="gender">
+				    				<label for="female">여성</label>
+				    			</dd>
+				    			<dt>취미</dt>
+				    			<dd>
+				    				<input type="checkbox" id="game">
+				    				<label for="game">게임</label>
+				    				<input type="checkbox" id="movie">
+				    				<label for="movie">영화보기</label>
+				    				<input type="checkbox" id="tv">
+				    				<label for="tv">tv보기</label>
+				    			</dd>
+				    		</dl>
+				    	</fieldset>
+				    	<button type="submit">확인</button>
+				    </form>
+
+				    <!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+					  Launch demo modal
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					      </div>
+					      <div class="modal-body">
+					        ...
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Save changes</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
 				</article>
 			</main> 
 			<nav class="lnb">
@@ -142,7 +211,8 @@
 			<p>Copyright &copy;FE.CAMP. All rights reserved.</p>
 		</footer>
 	</div>
-	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>	
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>	
 	<script src="default.js"></script>	
 </body>
 </html>
