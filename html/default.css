@@ -159,6 +159,10 @@ main>article{
 	/* 웹접근성 지침으로 색이 지정이 되어있기에 959595정도가 최대로 여리게 쓰일수 있는 색상이다.*/
 }
 
+.table-rwd{
+	overflow: auto;
+}
+
 /* Mobile */
 /* 오래된 모바일 브라우져를 지원하기 위해서 media 쿼리를 사용하지 않는다. (=mobile first css) */
 .container{
