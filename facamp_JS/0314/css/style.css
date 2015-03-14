@@ -1,0 +1,10 @@
+body {
+	background: #fff;
+	font-size: 13px;
+}
+
+h2 {
+	margin-top:2em;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: .5em;
+}
