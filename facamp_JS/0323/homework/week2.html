@@ -15,12 +15,13 @@
 	 */
 
 	// 문제1: 1초마다 한번씩 '틱'이라는 글자를 콘솔에 출력하는 함수 tick()을 작성하라.
-        
-    function tick(){
-        console.log(setTimeout('틱',1000));
+  
+    function tick(){        
+        setTimeout(arguments.callee, 1000);
+        console.log('틱');        
     }
 
-	// 문제2: 수학 관련 계산을 담당하는 Math 객체에는 원주율을 나타내는 Math.PI라는 값이 있다.
+    // 문제2: 수학 관련 계산을 담당하는 Math 객체에는 원주율을 나타내는 Math.PI라는 값이 있다.
 	// 반지름 값 r을 입력할 때 원의 넓이를 반환하는 함수 circleArea() 함수를 작성하라.
 	// 힌트: 원의 넓이 = 반지름의_제곱 * 원주율
 	// 사용예: console.log(circleArea(5)); // 78.539816...
