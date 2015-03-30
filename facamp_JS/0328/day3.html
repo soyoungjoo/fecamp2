@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>3일차</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/day3.js"></script>
+</head>
+<body>
+	<h1>오늘 배울 내용</h1>
+
+	<h2>복합 타입을 구분하는 방법(특히 배열)</h2>
+	<p><code>Array.isArray()</code> 메소드를 이용하자.</p>
+
+	<h2>복합 타입과 원시 타입의 차이</h2>
+	<p>원시 타입은 값 자체가 변수에 저장되는 셈이지만, 복합 타입은 값 자체가 아닌 값과의 연결 고리(=포인터)만 변수에 저장된다. 다음은 원시 타입 문자열을 복사하는 코드이다.</p>
+	<pre><code>var name1 = '김태곤';
+var name2 = name1;</code></pre>
+	<figure>
+		<img src="img/primitive_type_variable.png">
+		<figurecaption>원시 타입 변수</figurecaption>
+	</figure>
+	<p>다음은 복합 타입이 저장된 변수의 값을 다른 변수에 저장하는 코드이다.</p>
+	<pre><code>var obj1 = {
+  name: '김태곤',
+  gender: '남'
+};
+var obj2 = obj1;</code></pre>
+	<figure>
+		<img src="img/complex_type_variable.png">
+		<figurecaption>복합 타입 변수</figurecaption>
+	</figure>
+	<p>이처럼 실제 객체의 주소만 참조하는 방식때문에 복합 타입을 <strong>참조 타입</strong>(reference type)이라고도 부른다.</p>
+
+	<h2>전역 변수/함수, 지역 변수/함수</h2>
+	<p>어떤 함수에 속해있으면 <strong>지역</strong>(local), 그렇지 않으면 <strong>전역</strong>(global)이라고 구분한다.</p>
+
+	<h2>함수의 arguments와 this</h2>
+	<p>함수 안에서 <strong>실행할 때(at runtime)</strong>자동으로 만들어지는 변수. <code>arguments</code>에는 전달된 인수가 마치 배열과 같은 구조로 저장되어 있고, <code>this</code>는 함수를 소유하고 있는 객체를 참조한다.</p>
+
+	<h2>익명 함수, 콜백 함수</h2>
+	<p>함수에 이름이 없으면 익명(anonymous) 함수라 부른다. 콜백(callback) 함수는 함수를 용도에 따라 구분한 것으로, 어떤 상황이 되었을 때 실행하도록 전달하거나 저장하는 함수를 가리킨다.</p>
+</body>
+</html>
