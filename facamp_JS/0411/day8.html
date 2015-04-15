@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>8일차</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<script src="./js/jquery-1.11.2.min.js"></script>
+	<script src="js/day8.js"></script>
+</head>
+<body>
+	<h1>오늘 배울 내용</h1>
+
+	<h2>정규표현식</h2>
+	<p>정규표현식(regular expression)은 문자열에서 특정한 규칙을 찾아내어 일치 여부 또는 일치하는 문자열을 알아내거나 치환할 때 사용한다. 정규표현식 객체는 <code>RegExp</code> 생성자를 사용해 만들어 낼 수도 있고 슬래시 사이에 패턴을 두는 <code>/패턴/</code> 리터럴 방식을 사용해 만들 수도 있다.</p>
+	<p>
+		<h3>자주 사용하는 패턴 문자열</h3>
+		<ul>
+			<li><code>[문자]</code>: 각괄호 안에 있는 문자 한 개에 일치한다. 예를 들어 <code>[abc]</code>는 a 또는 b 또는 c 문자를 찾는다.</li>
+			<li><code>[^문자]</code>: 각괄호 안에 있지 않은 문자 한 개에 일치한다. 예를 들어 <code>[^abc]</code>는 a, b, c가 아닌 문자 한 개에 일치한다.</li>
+			<li><code>[시작문자-끝문자]</code>: 해당 범위에 있는 문자 한 개에 일치한다. 예를 들어 <code>[0-9]</code>는 숫자 한 개에 일치한다.</li>
+			<li><code>[^시작문자-끝문자]</code>: 해당 범위에 없는 문자 한 개에 일치한다. 예를 들어 <code>[^0-9]</code>는 숫자가 아닌 문자 한 개에 일치한다.</li>
+			<li><code>\w</code>: <code>[a-zA-Z0-9_]</code>와 같은 의미이다.</li>
+			<li><code>\W</code>: <code>[^a-zA-Z0-9_]</code>와 같은 의미이다.</li>
+			<li><code>\d</code>: <code>[0-9]</code>와 같은 의미이다.</li>
+			<li><code>\D</code>: <code>[^0-9]</code>와 같은 의미이다.</li>
+			<li><code>\s</code>: <code>[ \t\n\r]</code>과 같은 의미이다.</li>
+			<li><code>\S</code>: <code>[^ \t\n\r]</code>과 같은 의미이다.</li>
+			<li><code>\t</code>: 탭 문자에 일치한다.</li>
+			<li><code>\r</code>: 캐리지 리턴 문자에 일치한다.</li>
+			<li><code>\n</code>: 줄바꿈 문자에 일치한다.</li>
+			<li><code>.</code>: 어떤 문자에든 일치한다.</li>
+		</ul>
+	</p>
+	<p>
+		<h3>수량자(quantifier)</h3>
+		<ul>
+			<li><code>n*</code>: n 패턴이 0번 이상 반복된 것에 일치한다.</li>
+			<li><code>n+</code>: n 패턴이 1번 이상 반복된 것에 일치한다.</li>
+			<li><code>n{A}</code>: n 패턴이 A번 반복된 것에 일치한다.</li>
+			<li><code>n{A,B}</code>: n 패턴이 A번 이상, B번 이하 반복된 것에 일치한다.</li>
+			<li><code>n{A,}</code>: n 패턴이 A번 이상 반복된 것에 일치한다.</li>
+			<li><code>n$</code>: n 패턴이 문자열 끝에 있는 것에 일치한다.</li>
+			<li><code>^n</code>: n 패턴이 문자열 시작에 있는 것에 일치한다.</li>
+		</ul>
+	</p>
+	<p>
+		<h3>수정자(modifier): <small>패턴 리터럴을 닫는 슬래시 바로 뒤에 붙인다.</small></h3>
+		<ul>
+			<li><code>g</code>: 전체 탐색 (global)</li>
+			<li><code>i</code>: 대소문자 구분안함 (ignore cases)</li>
+			<li><code>m</code>: ^과 $를 줄 시작과 끝에 일치 (multiline)</li>
+		</ul>
+	</p>
+	<p>정규표현식을 사용하는 메소드로는 정규표현식 객체의 <code>test()</code>, <code>exec()</code> 그리고 문자열 객체의 <code>search()</code>, <code>match()</code>, <code>replace()</code>, <code>split()</code>이 있다.</p>
+
+	<h2>DOM 컬렉션</h2>
+	<p>일부 엘리먼트는 일부러 찾지 않아도 이미 <code>document</code> 객체에 컬렉션 형태로 저장되어 있다.</p>
+	<ul>
+		<li><code>document.anchors</code>: 앵커 엘리먼트의 컬렉션</li>
+		<li><code>document.forms</code>: 이미지 엘리먼트의 컬렉션</li>
+		<li><code>document.images</code>: 이미지 엘리먼트의 컬렉션</li>
+		<li><code>document.scripts</code>: 스크립트 엘리먼트의 컬렉션</li>
+		<li><code>document.styleSheets</code>: 스타일 엘리먼트의 컬렉션</li>
+	</ul>
+
+	<h2>DOM 이벤트</h2>
+	<p>DOM API를 사용해 이벤트 다루는 법을 살짝 배워봅니다. 이벤트를 추가할 때는 엘리먼트 객체의  <code>addEventListener()</code>와 <code>removeEventListener()</code> 메소드를 사용합니다.</p>
+
+	<h2>Form 엘리먼트 다루기</h2>
+	<p>Form 요소를 직접 다루어 값을 가져오고 설정하는 법을 배워봅니다.</p>
+
+	<h2>jQuery: 시작</h2>
+	<p>jQuery는 DOM 작업을 비롯한 여러 자바스크립트 작업을 편리하게 만들어주는 라이브러리이다.</p>
+
+<script src="js/prism.js"></script>
+</body>
+</html>

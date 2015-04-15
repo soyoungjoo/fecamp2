@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>10일차</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<script src="./js/jquery-1.11.2.min.js"></script>
+	<script src="js/day10.js"></script>
+</head>
+<body>
+	<h1>오늘 배울 내용</h1>
+
+	<button id="show">보이기</button>
+	<button id="hide" disabled="">숨기기</button>
+	<button id="toggle">토글</button>
+
+	<div id="box" style="width:50px;height:50px;top:10px;left:200px">
+		<span class="size-handle"></span>
+	</div>
+
+	<a href="#" class="top"><i class="fa fa-angle-double-up"></i> Top</a>
+
+	<h2>이벤트 관련 함수</h2>
+	<p>jQuery에서 이벤트를 추가하거나 제거할 때는 <code>.on()</code> 또는 <code>.off()</code> 함수를 사용한다. 임의로 마치 사용자가 이벤트를 발생시킨 것처럼 이벤트를 실행할 때는 <code>.trigger()</code> 함수를 사용한다. 앞서 배운 내용은 <a href="day9.html">9일차 강의</a>를 참고하세요.</p>
+
+	<h2>애니메이션 관련 함수</h2>
+	<button type="button" id="cloneItem">리스트 복제</button>
+	<ul>
+		<li><code>.show()/.hide()/.toggle()</code>: 대각선으로 펼쳐지며 나타나거나 접히며 사라진다. 시간을 뜻하는 인수가 없으면 <code>display</code> 속성을 <code>none</code> 또는 그 밖의 값으로 설정한다.</li>
+		<li><code>.fadeIn()/.fadeOut()/.fadeToggle()</code>: 페이드 인/아웃 효과</li>
+		<li><code>.slideDown()/.slideUp()/.slideToggle()</code>: 아래로 펼쳐지며 나타났다가 위로 닫히는 효과</li>
+		<li><code><a href="http://api.jquery.com/animate/">.animate()</a></code>: 사용자 정의 애니메이션을 작성한다.</li>
+		<li><code><a href="http://api.jquery.com/stop/">.stop()</a></code>: 진행 중인 애니메이션을 현재 상태 그대로 중지한다.</li>
+		<li><code><a href="http://api.jquery.com/finish/">.finish()</a></code>: 진행 중인 애니메이션을 즉시 완료한다.</li>
+		<li><code><a href="http://api.jquery.com/delay/">.delay()</a></code>: 애니메이션을 전달한 시간만큼 지연시킨다.</li>
+		<li>애니메이션에 사용되는 시간 문자열 <code>'fast'</code>는 <code>200ms</code>를 뜻하고 <code>'slow'</code>는 <code>600ms</code>를 의미한다.</li>
+	</ul>
+
+	<h2>CSS 관련 함수</h2>
+	<ul>
+		<li><code>.css()</code>: CSS 속성의 값을 가져오거나 설정한다. 설정한 CSS는 인라인 스타일로 추가된다.</li>
+		<li><code><a href="http://api.jquery.com/addClass/">.addClass()</a>/.removeClass()/.toggleClass()</code>: 클래스를 추가하거나 제거한다.</li>
+		<li><code><a href="http://api.jquery.com/hasClass/">.hasClass()</a></code>: 인수로 전달한 클래스가 설정되어 있는지 확인한다.</li>
+		<li><code>.width()/.height()</code>: 엘리먼트의 너비와 높이를 반환하거나 설정한다.</li>
+		<li><code>.innerWidth()/.innerHeight()</code>: 엘리먼트의 너비와 높이를 반환하는데, 패딩은 포함하지만 마진은 포함하지 않는다. <code>window</code>와 <code>document</code> 객체에는 사용할 수 없다.</li>
+		<li><code>.outerWidth()/.outerHeight()</code>: 엘리먼트의 너비와 높이를 반환하는데, 패딩과 마진을 다 포함한다. </li>
+		<li><code>.offset()</code>: 엘리먼트의 위치를 가진 <code>object</code>를 반환한다. 이 객체에는 left, top 프로퍼티가 있는데 각각 전체 페이지의 왼쪽 끝과 위쪽 끝에서 멀어진 픽셀 거리를 나타낸다.</li>
+		<li><code>.position()</code>: 엘리먼트의 위치를 가진 <code>object</code>를 반환한다. 이 객체에는 left, top 프로퍼티가 있는데 각각 부모 오프셋 객체의 왼쪽 끝과 위쪽 끝에서 멀어진 픽셀 거리를 나타낸다.</li>
+		<li><code>.scrollLeft()/.scrollTop()</code>: 엘리먼트 내부의 스크롤 위치를 설정하거나 반환한다.</li>
+	</ul>
+
+	<h2>DOM 탐색 함수</h2>
+	<ul>
+		<li><code>.find()</code>: 엘리먼트 내부에서 인수로 전달한 선택자에 해당하는 자손 엘리먼트를 찾는다.</li>
+		<li><code>.parent()</code>: 부모 엘리먼트를 찾는다.</li>
+		<li><code>.parents()</code>: 부모 엘리먼트를 모두 찾는다.</li>
+		<li><code>.closest()</code>: 선택자에 일치하는 가장 가까운 자신 및 조상 엘리먼트를 찾는다.</li>
+		<li><code>.children()</code>: 자식 엘리먼트를 찾는다.</li>
+		<li><code>.next()</code>: 바로 다음 형제 엘리먼트를 찾는다.</li>
+		<li><code>.nextAll()</code>: 다음 형제 엘리먼트를 모두 찾는다.</li>
+		<li><code>.prev()</code>: 바로 앞 형제 엘리먼트를 찾는다.</li>
+		<li><code>.prevAll()</code>: 앞 형제 엘리먼트를 모두 찾는다.</li>
+		<li><code>.siblings()</code>: 형제 엘리먼트를 모두 찾는다.</li>
+	</ul>
+
+	<h2>DOM 조작 함수</h2>
+	<ul>
+		<li><code>.attr()</code>: 엘리먼트의 속성을 가져오거나 설정한다.</li>
+		<li><code>.prop()</code>: 엘리먼트 객체의 프로퍼티를 가져오거나 설정한다.</li>
+		<li><code>.removeAttr()</code>: 인수로 전달한 이름의 속성을 제거한다.</li>
+		<li><code>.data()</code>: 엘리먼트 객체에 사용자 데이터를 저장해둔다.</li>
+		<li><code>.after()</code>: 엘리먼트 뒤에 인수로 전달한 엘리먼트를 추가한다.</li>
+		<li><code>.before()</code>: 엘리먼트 앞에 인수로 전달한 엘리먼트를 추가한다.</li>
+		<li><code>.insertAfter()</code>: 엘리먼트를 인수로 전달한 엘리먼트 뒤에 추가한다.</li>
+		<li><code>.insertBefore()</code>: 엘리먼트를 인수로 전달한 엘리먼트 앞에 추가한다.</li>
+		<li><code>.append()</code>: 엘리먼트에 인수로 전달한 엘리먼트를 마지막 자식 요소로 추가한다.</li>
+		<li><code>.prepend()</code>: 엘리먼트에 인수로 전달한 엘리먼트를 첫 번째 자식 요소로 추가한다.</li>
+		<li><code>.appendTo()</code>: 엘리먼트를 인수로 전달한 엘리먼트의 마지막 자식 요소로 추가한다.</li>
+		<li><code>.prependTo()</code>: 엘리먼트를 인수로 전달한 엘리먼트의 첫 번째 자식 요소로 추가한다.</li>
+		<li><code>.replaceWith()</code>: 엘리먼트를 인수로 전달한 엘리먼트로 교체한다.</li>
+		<li><code>.clone()</code>: 엘리먼트를 복제한다.</li>
+	</ul>
+
+	<div id="tab">
+		<ul class="tabs">
+			<li class="active"><a href="#tab1">탭1</a></li>
+			<li><a href="#tab2">탭2</a></li>
+			<li><a href="#tab3">탭3</a></li>
+		</ul>
+		<div class="tab-container">
+			<div id="tab1" class="tab-panel active">
+				탭1 패널
+			</div>
+			<div id="tab2" class="tab-panel">
+				탭2 패널
+			</div>
+			<div id="tab3" class="tab-panel">
+				탭3 패널
+			</div>
+		</div>
+	</div>
+
+	<div id="container">
+		<!--
+		마우스를 올리면 이미지를 data-hover에 있는 값으로 교체하고
+		마우스를 떼면 다시 원래대로 복구한다.
+		-->
+		<img src="http://placehold.it/300x150" data-hover="https://placekitten.com/300/150">
+	</div>
+
+<script src="js/prism.js"></script>
+</body>
+</html>

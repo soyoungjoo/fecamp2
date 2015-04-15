@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>5일차</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<script src="js/day5.js"></script>
+</head>
+<body>
+	<h1>오늘 배울 내용</h1>
+
+	<h2>연산자</h2>
+	<h3>산술 연산자</h3>
+	<p>수식 계산을 위해 필요한 연산자</p>
+
+	<h3>비교 연산자</h3>
+	<p>두 값을 비교하는 연산자</p>
+
+	<h3>할당 연산자</h3>
+	<p>변수에 값을 할당하기 위해 사용하는 연산자</p>
+
+	<h3>논리 연산자</h3>
+	<p>표현식의 논리적인 결합을 위해 필요한 연산자</p>
+
+	<h3>비트 연산자</h3>
+	<p>비트(bit) 계산을 위해 필요한 연산자</p>
+
+	<h2>조건문</h2>
+	<p>주어진 조건을 만족하거나 만족하지 않을 때 실행할 코드를 달리하기 위해 사용하는 문법</p>
+	<h3>if, else</h3>
+	<p><code>if</code>문 안에 있는 내용의 참(true) 또는 거짓(false)을 판별하여 참이면 <code>if</code>문 블럭을 실행하고 거짓이면 <code>else</code>문 블럭의 코드를 실행한다. <code>if</code>와 <code>else</code> 사이에는 또 다른 조건 블럭을 추가할 수 있는 <code>else if</code>문을 0개 이상 사용할 수 있다. <code>else</code>와 <code>else if</code>는 생략할 수 있다.</p>
+	<pre><code class="language-javascript">// 변수 num의 값이 3보다 크면 코드를 실행한다.
+if (num > 3) {
+	console.log('num은 3보다 큽니다');
+}</code></pre>
+	<h3>참스러운 값(truthy value)과 거짓스러운 값(falsy value)</h3>
+	<p>조건문에 사용되는 모든 조건이 반드시 <code>true</code>와 <code>false</code>로 구별되지는 않는다. 일부값은 <code>false</code>가 아님에도 조건문에서 마치 <code>false</code>처럼 취급된다.</p>
+	<h4><code>false</code>처럼 취급되는 값</h4>
+	<p><ul>
+		<li>숫자 0</li>
+		<li>빈 문자열</li>
+		<li>undefined</li>
+		<li>null</li>
+		<li>NaN</li>
+	</ul></p>
+	<p>그 밖의 값은 모두 <code>true</code>처럼 취급된다.</p>
+	<h3>switch</h3>
+	<p>비교할 표현식이 특정한 값과 같은지 여러 차례 비교해야 할 때 주로 사용.</p>
+	<pre><code class="language-javascript">/* 좋은 코드는 아니지만, 예제로 봐주세요. */
+function 요일(y, m, d) {
+	var date = new Date(y, m-1, d), name = '';
+	switch(date.getDay()) {
+	case 0:
+		name = '일';
+		break;
+	case 1:
+		name = '월';
+		break;
+	case 2:
+		name = '화';
+		break;
+	case 3:
+		name = '수';
+		break;
+	case 4:
+		name = '목';
+		break;
+	case 5:
+		name = '금';
+		break;
+	case 6:
+		name = '토';
+		break;
+	}
+	return name;
+}</code></pre>
+
+<script src="js/prism.js"></script>
+</body>
+</html>

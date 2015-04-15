@@ -1,0 +1,45 @@
+body {
+	background: #fff;
+	font-size: 13px;
+}
+
+h2 {
+	margin-top:2em;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: .5em;
+}
+
+figure > img {
+	border: 0;
+	max-width: 100%;
+}
+
+figurecaption {
+	display: block;
+}
+
+p code {
+	color : #f00;
+}
+
+#box {
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+	border:1px solid #777;
+}
+
+.size-handle { 
+	position: absolute; 
+	bottom: -3px; 
+	right: -3px; 
+	width:6px; 
+	height:6px; 
+	overflow:hidden; 
+	background:#fff; 
+	border:1px solid #ccc; 
+	cursor:nwse-resize; 
+} 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>9일차</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<script src="./js/jquery-1.11.2.min.js"></script>
+	<script src="js/day9.js"></script>
+</head>
+<body>
+	<h1>오늘 배울 내용</h1>
+
+	<div id="box" style="width:50px;height:50px;top:10px;left:200px">
+		<span class="size-handle"></span>
+	</div>
+
+	<h2>jQuery 팁</h2>
+	<ol>
+		<li>API는 <a href="http://api.jquery.com">http://api.jquery.com</a>에서 찾으세요.</li>
+		<li>엘리먼트를 선택한 뒤에는 명령을 계속 이어서 작성할 수 있습니다. 이러한 기능을 가리켜 체이닝(chaining)이라고 부릅니다.
+			<pre><code class="language-javascript">$('#box').css('left', '20px').show();</code></pre></li>
+		<li>엘리먼트를 선택한 jQuery 객체를 변수에 저장할 때 변수 이름 앞에 <code>$</code>를 붙여두면 식별하기 편리합니다.</li>
+	</ol>
+
+	<h2>이벤트 관련 함수</h2>
+	<p>jQuery에서 이벤트를 추가하거나 제거할 때는 <code>.on()</code> 또는 <code>.off()</code> 함수를 사용한다. 임의로 마치 사용자가 이벤트를 발생시킨 것처럼 이벤트를 실행할 때는 <code>.trigger()</code> 함수를 사용한다.</p>
+
+	<h2>애니메이션 관련 함수</h2>
+	<ul>
+		<li><code>.show()/.hide()</code>: 대각선으로 펼쳐지며 나타나거나 접히며 사라진다. 시간을 뜻하는 인수가 없으면 <code>display</code> 속성을 <code>none</code> 또는 그 밖의 값으로 설정한다.</li>
+		<li><code>.fadeIn()/.fadeOut()/.fadeToggle()</code>: 페이드 인/아웃 효과</li>
+		<li><code>.slideDown()/.fadeUp()/.fadeToggle()</code>: 아래로 펼쳐지며 나타났다가 위로 닫히는 효과</li>
+		<li>애니메이션에 사용되는 시간 문자열 <code>'fast'</code>는 <code>200ms</code>를 뜻하고 <code>'slow'</code>는 <code>600ms</code>를 의미한다.</li>
+	</ul>
+
+<script src="js/prism.js"></script>
+</body>
+</html>
